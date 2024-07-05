@@ -2,7 +2,7 @@
 
 ### Formatul JSON pentru intrebari
 Fisierul JSON este cautat in directorul curent si trebuie sa aiba numele "quiz.json" (QuizForm.cs / LoadQuestions())
-Intrebările trebuie scrise intr-un fisier JSON in urmatorul format:
+\nIntrebările trebuie scrise intr-un fisier JSON in urmatorul format:
 ```json
 [
  {
