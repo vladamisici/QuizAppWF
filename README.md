@@ -27,6 +27,7 @@ Intrebările trebuie scrise intr-un fisier JSON in urmatorul format:
 ```
 ### Salvare rezultate
 Rezultatele se salveaza intr-un folder creat la finalul quiz-ului in directorul curent ( /{nume_user}_results/{nume_user}_results_{dd_mm_yy_hh_min_sec}.xlsx
+
 (Se poate modifica asta din QuizForm.cs / SaveResults() in variabila folderPath (string folderPath = Path.Combine(Directory.GetCurrentDirectory(), $"{username}_results");) )
 
 
