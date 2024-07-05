@@ -2,7 +2,7 @@
 
 ### Formatul JSON pentru intrebari
 Fisierul JSON este cautat in directorul curent si trebuie sa aiba numele "quiz.json" (QuizForm.cs / LoadQuestions())
-\nIntrebările trebuie scrise intr-un fisier JSON in urmatorul format:
+Intrebările trebuie scrise intr-un fisier JSON in urmatorul format:
 ```json
 [
  {
@@ -32,3 +32,5 @@ Rezultatele se salveaza intr-un folder creat la finalul quiz-ului in directorul 
 
 ### OBS. 
 Datele de intrare sunt considerate corecte, nu am luat in vedere erori ale utilizatorului (ex. intrebarile nu acumuleaza 100 puncte in total, numele utilizatorului are caractere speciale si apar erori la salvarea fisierului excel cu rezultatele etc.)
+
+Foloseste biblioteca EPPlus pentru lucrul cu fisierele Excel
