@@ -12,7 +12,6 @@ namespace QuizWF
 {
     public partial class QuizForm : RoundedForm
     {
-        // PInvoke declarations for dragging the form
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -110,7 +109,7 @@ namespace QuizWF
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // Close the entire application
+            Application.Exit();
         }
 
         private void SaveResults()
