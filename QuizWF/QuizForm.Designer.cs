@@ -67,6 +67,8 @@ namespace QuizWF
             this.nextButton.Location = new Point(140, 500);
             this.nextButton.Size = new Size(120, 40);
             this.nextButton.Text = "Next";
+            this.nextButton.ForeColor = Color.White;
+            this.nextButton.BackColor = Color.Blue;
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new EventHandler(this.NextButton_Click);
             // 
@@ -90,7 +92,7 @@ namespace QuizWF
             // 
             // usernameLabel
             // 
-            this.usernameLabel.Font = new Font("Segoe UI", 10F);
+            this.usernameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             this.usernameLabel.Location = new Point(100, 10);
             this.usernameLabel.Size = new Size(200, 30);
             this.usernameLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -98,15 +100,16 @@ namespace QuizWF
             // 
             // closeButton
             // 
+            this.closeButton.BackColor = System.Drawing.Color.Transparent;
+            this.closeButton.BackgroundImage = global::QuizWF.Properties.Resources.delete;
+            this.closeButton.BackgroundImageLayout = ImageLayout.Stretch;
+            this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = FlatStyle.Flat;
-            this.closeButton.Font = new Font("Segoe UI", 10F);
-            this.closeButton.Location = new Point(340, 10);
-            this.closeButton.Size = new Size(30, 30);
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.BackColor = Color.Red;
-            this.closeButton.ForeColor = Color.White;
-            this.closeButton.Click += new EventHandler(this.CloseButton_Click);
+            this.closeButton.Location = new Point(360, 10);
+            this.closeButton.Size = new Size(25, 25);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // QuizForm
             // 

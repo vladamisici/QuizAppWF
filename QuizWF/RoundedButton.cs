@@ -21,7 +21,16 @@ namespace QuizWF
                 path.AddArc(0, Height - CornerRadius, CornerRadius, CornerRadius, 90, 90);
                 path.CloseAllFigures();
                 Region = new Region(path);
-                e.Graphics.DrawPath(Pens.Gray, path);
+                e.Graphics.DrawPath(Pens.Transparent, path);
+
+                // gradient
+                using (Brush brush = new LinearGradientBrush(ClientRectangle, Color.LightGray, Color.DarkGray, LinearGradientMode.Vertical))
+                {
+                    e.Graphics.FillPath(brush, path);
+                }
+
+                // Draw text
+                TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
             }
         }
 

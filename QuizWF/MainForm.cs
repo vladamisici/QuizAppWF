@@ -36,6 +36,11 @@ namespace QuizWF
             this.Close();
         }
 
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void signUpButton_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text.Trim();
