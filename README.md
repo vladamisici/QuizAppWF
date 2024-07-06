@@ -6,22 +6,22 @@ Intrebările trebuie scrise intr-un fisier JSON in urmatorul format:
 ```json
 [
  {
-     "question": "Care este capitala Franței?",
-     "options": ["Paris", "Londra", "Berlin", "Madrid"],
-     "correctAnswer": "Paris",
-     "points": 25
+     "QuestionText": "Care este capitala Franței?",
+     "Options": ["Paris", "Londra", "Berlin", "Madrid"],
+     "CorrectAnswer": "Paris",
+     "Points": 25
  },
  {
-     "question": "Cine a scris 'Hamlet'?",
-     "options": ["Charles Dickens", "J.K. Rowling", "William Shakespeare", "Mark Twain"],
-     "correctAnswer": "William Shakespeare",
-     "points": 25
+     "QuestionText": "Cine a scris 'Hamlet'?",
+     "Options": ["Charles Dickens", "J.K. Rowling", "William Shakespeare", "Mark Twain"],
+     "CorrectAnswer": "William Shakespeare",
+     "Points": 25
  },
  {
-     "question": "Care este simbolul chimic pentru apă?",
-     "options": ["H2O", "CO2", "O2", "N2"],
-     "correctAnswer": "H2O",
-     "points": 25
+     "QuestionText": "Care este simbolul chimic pentru apă?",
+     "Options": ["H2O", "CO2", "O2", "N2"],
+     "CorrectAnswer": "H2O",
+     "Points": 50
  }
 ]
 ```
