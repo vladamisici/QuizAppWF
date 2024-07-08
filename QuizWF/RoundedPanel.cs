@@ -8,20 +8,31 @@ namespace QuizWF
     public class RoundedPanel : Panel
     {
         public int CornerRadius { get; set; } = 15;
+        public Color BorderColor { get; set; } = Color.LightGray;
+        public int BorderWidth { get; set; } = 1;
+
+        public RoundedPanel()
+        {
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
+            this.BackColor = SystemColors.Control;
+            this.BorderStyle = BorderStyle.None;
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            using (GraphicsPath path = new GraphicsPath())
+
+            // Clear the background with the panel's back color
+            e.Graphics.Clear(this.BackColor);
+
+            // Draw inner white rectangle with rounded corners
+            e.Graphics.FillRoundedRectangle(new SolidBrush(Color.White), 0, 0, this.Width - 1, this.Height - 1, CornerRadius);
+
+            // Draw border
+            using (Pen pen = new Pen(BorderColor, BorderWidth))
             {
-                path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90);
-                path.AddArc(Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90);
-                path.AddArc(Width - CornerRadius, Height - CornerRadius, CornerRadius, CornerRadius, 0, 90);
-                path.AddArc(0, Height - CornerRadius, CornerRadius, CornerRadius, 90, 90);
-                path.CloseAllFigures();
-                Region = new Region(path);
-                e.Graphics.DrawPath(Pens.Gray, path);
+                e.Graphics.DrawRoundedRectangle(pen, 0, 0, this.Width - 1, this.Height - 1, CornerRadius);
             }
         }
     }

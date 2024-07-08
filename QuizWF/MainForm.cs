@@ -20,6 +20,8 @@ namespace QuizWF
         {
             InitializeComponent();
             this.MouseDown += new MouseEventHandler(Form_MouseDown);
+
+            toolTip1.SetToolTip(optionalLabel, "Quiz results will be sent to the specified email.");
         }
 
         private void Form_MouseDown(object sender, MouseEventArgs e)
@@ -57,7 +59,6 @@ namespace QuizWF
                 this.Hide();
             }
         }
-
 
         private void MainForm_Load(object sender, EventArgs e)
         {

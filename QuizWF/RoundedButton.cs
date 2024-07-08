@@ -8,6 +8,49 @@ namespace QuizWF
     public class RoundedButton : Button
     {
         public int CornerRadius { get; set; } = 15;
+        public Color BaseColor { get; set; } = Color.Blue;
+        public Color HoverColor { get; set; } = Color.DarkBlue;
+        public Color ClickColor { get; set; } = Color.MediumBlue;
+        private Color currentColor;
+
+        public RoundedButton()
+        {
+            currentColor = BaseColor;
+            MouseEnter += RoundedButton_MouseEnter;
+            MouseLeave += RoundedButton_MouseLeave;
+            MouseDown += RoundedButton_MouseDown;
+            MouseUp += RoundedButton_MouseUp;
+        }
+
+        private void RoundedButton_MouseEnter(object sender, EventArgs e)
+        {
+            currentColor = HoverColor;
+            Invalidate();
+        }
+
+        private void RoundedButton_MouseLeave(object sender, EventArgs e)
+        {
+            currentColor = BaseColor;
+            Invalidate();
+        }
+
+        private void RoundedButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                currentColor = ClickColor;
+                Invalidate();
+            }
+        }
+
+        private void RoundedButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                currentColor = HoverColor;
+                Invalidate();
+            }
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -23,8 +66,8 @@ namespace QuizWF
                 Region = new Region(path);
                 e.Graphics.DrawPath(Pens.Transparent, path);
 
-                // gradient
-                using (Brush brush = new LinearGradientBrush(ClientRectangle, Color.LightGray, Color.DarkGray, LinearGradientMode.Vertical))
+                // Fill button background with the current color
+                using (Brush brush = new SolidBrush(currentColor))
                 {
                     e.Graphics.FillPath(brush, path);
                 }
